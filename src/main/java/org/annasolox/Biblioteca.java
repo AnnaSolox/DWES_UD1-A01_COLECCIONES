@@ -99,7 +99,8 @@ public class Biblioteca {
     }
 
     public List<Libro> getLibrosPredefinidos(){
-        List<Libro> libros = new ArrayList<>(List.of(
+
+        return new ArrayList<>(List.of(
                 new Libro("1984", "George Orwell", "Secker & Warburg", "1234567890", 1949),
                 new Libro("El Principito", "Antoine de Saint-Exupéry", "Reynal & Hitchcock", "2345678901", 1943),
                 new Libro("Cien Años de Soledad", "Gabriel García Márquez", "Sudamericana", "3456789012", 1967),
@@ -111,19 +112,16 @@ public class Biblioteca {
                 new Libro("La Metamorfosis", "Franz Kafka", "Kurt Wolff Verlag", "9012345678", 1915),
                 new Libro("Crimen y Castigo", "Fiódor Dostoyevski", "The Russian Messenger", "0123456789", 1866)
         ));
-
-        return libros;
     }
 
     public List<Usuario> getUsuariosPredefinidos(){
-        List<Usuario> usuarios = new ArrayList<>(List.of(
+
+        return new ArrayList<>(List.of(
                 new Usuario("Anna", "asdasdf321654"),
                 new Usuario("Enrique", "faoDIJH90y5"),
                 new Usuario("Erika", "32984sdfkjQO3G"),
                 new Usuario("Jordi", "234weafjbro8q237")
         ));
-
-        return usuarios;
     }
 
 }
