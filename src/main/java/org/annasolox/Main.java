@@ -13,9 +13,8 @@ public class Main {
         List<Libro> libros = biblioteca.getLibrosPredefinidos();
         List<Usuario> usuarios = biblioteca.getUsuariosPredefinidos();
 
-        //Ejercicio 1. - Stack
-        //Implementa un historial de navegación de libros consultados
-        //1.1 Cada vez que un usuario abre un libro, este se añade al Stack.
+        //Ejercicio 1.
+        //1.1
         biblioteca.abrirLibro(libros.get(3));
         biblioteca.abrirLibro(libros.get(1));
         biblioteca.abrirLibro(libros.get(2));
@@ -24,18 +23,13 @@ public class Main {
         biblioteca.abrirLibro(libros.get(6));
         biblioteca.abrirLibro(libros.get(7));
 
-        //1.2 El programa debe permitir:
+        //1.2
         biblioteca.mostrarUltimoLibroConsultado();
         biblioteca.listarLibrosConsultados();
         biblioteca.retrocederEnElHistorial();
         biblioteca.mostrarUltimoLibroConsultado();
 
-        //1.3 Pregunta: ¿Qué estructura de acceso representa un Stack (LIFO o FIFO)?
-        // Respuesta: LIFO -> Last In First Out. Cogeremos siempre de arriba de la pila, por lo que el último
-        // libro introducido será el que salga cuando hagamos pop().
-
-        //Ejercicio 2. - Queue
-        // Simula la cola de espera de un libro popular con una Queue<String>
+        //Ejercicio 2.
         //2.1
         biblioteca.aniadirUsuarioACola(new Usuario("Anna", "asdasdf321654"));
         biblioteca.aniadirUsuarioACola(new Usuario("Enrique", "faoDIJH90y5"));
@@ -45,12 +39,8 @@ public class Main {
         biblioteca.atenderUsuarioCola();
         //2.3
         biblioteca.mostrarCola();
-        //2.4. Pregunta: ¿Qué estructura de acceso representa una Queue (LIFO o FIFO)?
-        // Respuesta: FIFO -> First In First Out. En las colecciones Queue, siempre sale primero el que ha entrado
-        // primero, como en una fila de personas en la vida real.
 
-        //Ejercicio 3. - Set
-        //Crea un catálogo de libros usando un HashSet<String>.
+        //Ejercicio 3.
         //3.1
         biblioteca.insertarEnCatalogo(libros.get(0));
         biblioteca.insertarEnCatalogo(libros.get(9));
@@ -64,13 +54,8 @@ public class Main {
         biblioteca.comprobarCatalogo("El Principito");
         //3.3
         biblioteca.mostrarTitulosDisponibles();
-        //3.4 Pregunta: ¿Qué ocurre al intentar insertar elementos duplicados en un HashMap? ¿Qué diferencia hay con el HashSet? ¿Cuándo crees que puede ser útil esta estructura (HashSet)?
-        //Respuesta: En un HashMap podemos introducir valores duplicados con claves distintas, pero si introducimos
-        // una clave duplicada, el valor asociado a este clave cambiará por el nuevo valor introducido.
-        // El HashSet no permite duplicados. Si intentas introducir un valor que ya existe, no se almacenará de nuevo.
 
-        //Ejercicio 4. - HashMap
-        //Gestiona un sistema de usuarios y contraseñas con un HashMap<String, String>
+        //Ejercicio 4.
         //4.1
         usuarios.forEach(biblioteca::registrarUsuario);
         biblioteca.registrarUsuario(new Usuario("Juan", "askfjbPQ3984Y"));
@@ -79,12 +64,6 @@ public class Main {
         biblioteca.verificarInicioSesion("David");
         //4.3
         biblioteca.mostrarTodosLosUsuarios();
-        //4.4 Pregunta: ¿Cómo diferencia HashMap a dos claves distintas que generan el mismo hashCode()?
-        //Respuesta: Cuando dos claves distintas generan el mismo hashCode, se produce una colisión. Para solventar
-        // esta colisión, HashMap guarda el segundo par clave-valor en el mismo bucket. Si el número de colisiones no
-        // es grande, convierte el bucket en un LinkedList. Si hay muchas colisiones, lo convierte en un árbol
-        // rojo-negro.
-        // El acceso a la clave correcta, lo realiza haciendo comparaciones de los nodos con equals().
 
         //Ejercicio 5
         //5.1
@@ -104,8 +83,5 @@ public class Main {
         //5.3
         biblioteca.consultarPrimerLibro();
         biblioteca.consultarUltimoLibro();
-        //5.4 Pregunta: ¿En qué se diferencia un TreeMap de un HashMap en cuanto al orden de las claves?
-        //El HashMap guarda los pares clave según el hashCode generado, sin un orden concreto. El TreeMap los guarda de
-        // forma ordenada utilizando una estructura de árbol rojo-negro.
     }
 }
