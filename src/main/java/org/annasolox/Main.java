@@ -60,8 +60,8 @@ public class Main {
         usuarios.forEach(biblioteca::registrarUsuario);
         biblioteca.registrarUsuario(new Usuario("Juan", "askfjbPQ3984Y"));
         //4.2
-        biblioteca.verificarInicioSesion(usuarios.getFirst().getNombre());
-        biblioteca.verificarInicioSesion("David");
+        biblioteca.verificarInicioSesion(usuarios.getFirst());
+        biblioteca.verificarInicioSesion(new Usuario("Enrique", "faoathst123"));
         //4.3
         biblioteca.mostrarTodosLosUsuarios();
 

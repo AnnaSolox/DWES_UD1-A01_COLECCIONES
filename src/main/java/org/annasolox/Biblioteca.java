@@ -70,8 +70,9 @@ public class Biblioteca {
         usuarios.put(usuario.getNombre(), usuario.getContrasenia());
     }
 
-    public void verificarInicioSesion(String nombreUsuario){
-        if (usuarios.containsKey(nombreUsuario)){
+    public void verificarInicioSesion(Usuario usuario){
+        String contraseniaGuardada = usuarios.get(usuario.getNombre());
+        if (contraseniaGuardada!=null && contraseniaGuardada.equals(usuario.getContrasenia())){
             System.out.println("Inicio sesión con éxito");
         } else {
             System.out.println("No se puede iniciar sesión, el usuario no existe");
